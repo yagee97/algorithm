@@ -74,10 +74,10 @@ void bfs()
 			info[i] = { 0,0,0 };
 		}
 		for (int i = 0; i < enermy.size(); i++)
-			enermy[i].x++;
+			enermy[i].x++; //살아남은 적들은 한칸씩 아래로 이동
 
 		for (int i = 0; i < enermy.size(); i++)
-			if (enermy[i].x > n+1) {
+			if (enermy[i].x > n+1) { //이동했는데 성이 있는 칸이면 없애기
 				enermy.erase(enermy.begin() + i);
 				i--;
 			}
