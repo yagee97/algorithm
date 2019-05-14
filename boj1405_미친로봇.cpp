@@ -33,9 +33,7 @@ int main()
 	for (int i = 0; i < 4; i++) {
 		cin >> pro[i];
 		pro[i] = pro[i] / 100.0;
-	
 	}
-	
 	//절대오차 있을 때 꼭 출력범위 확인하기
 	cout.precision(11);
 	cout << fixed;
