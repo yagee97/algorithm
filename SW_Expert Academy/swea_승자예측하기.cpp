@@ -2,58 +2,70 @@
 #include <algorithm>
 using namespace std;
 
+int T;
+long long N, level, x = 1;
+
 int main()
 {
 	ios::sync_with_stdio(0); cin.tie(0);
-
-	int T;
 	cin >> T;
 
 	for (int test_case = 1; test_case <= T; test_case++)
 	{
-		long long N;
 		cin >> N;
 
-		if (N <= 3LL)
-		{
-			if (N == 1LL) cout << "#" << test_case << " Bob\n";
-			else cout << "#" << test_case << " Alice\n";
+		if (N == 1) {
+			cout << "#" << test_case << " Bob\n";
+			continue;
+		}
+		else if (N == 2 || N == 3) {
+			cout << "#" << test_case << " Alice\n";
 			continue;
 		}
 		else
 		{
-			// N의 층수 구하기
-			long long num = N, x = 1LL;
+			// N 층수
+			level = N;
+			x = 1;
 			int depth = 0;
-			while (num > 1LL)
+			while (level > 1)
 			{
 				depth++;
-				num /= 2LL;
+				level /= 2;
 			}
-			if (depth % 2 == 0) // depth가 짝수면 bob이 N/2 이하를 고르는 것이 좋다.
+			// depth는 둘이서 총 몇번 번갈아가느냐!
+			if (depth % 2 == 0) //depth 가 짝수
 			{
 				for (int i = 0; i < depth; i++)
-				{   // 앨리스부터 시작하니까 2x+1 하려고 노력하겠지.
-					if (i % 2 == 0) x = 2 * x + 1LL;
-					else x = 2 * x;
+				{
+					if (i % 2 == 0) //bob은 크게
+						x = 2 * x + 1;
+
+					else x = 2 * x;//alice는 작게
+
 					if (i == depth - 1 && x <= N)
+						//depth-1은 alice, x가 N까지 아직이면 bob이 이김.
 					{
 						cout << "#" << test_case << " Bob\n";
 						break;
 					}
 					else if (i == depth - 1 && x > N)
+						//depth가 짝수인데 x가 N을 넘었으면 bob이 뭘 고르던 짐
 					{
 						cout << "#" << test_case << " Alice\n";
 						break;
 					}
 				}
 			}
-			else
+			else//depth가 홀수
 			{
 				for (int i = 0; i < depth; i++)
 				{
-					if (i % 2 == 0) x = 2 * x;
-					else x = 2 * x + 1LL;
+					if (i % 2 == 0) //bob은 작게
+						x = 2 * x;
+					else
+						x = 2 * x + 1;//alice는 크게. 
+
 					if (i == depth - 1 && x <= N)
 					{
 						cout << "#" << test_case << " Alice\n";
