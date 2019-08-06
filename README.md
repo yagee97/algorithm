@@ -1,2 +1,5 @@
 # Algorithm
-BOJ와 SW Expert Academy 문제들을 담아 놓는 repository 입니다.
+1) Backjoon online judge
+2) SW expert academy
+
+<br>
