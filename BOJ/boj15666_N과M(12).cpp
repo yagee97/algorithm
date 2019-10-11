@@ -1,0 +1,51 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+int n, m;
+vector<int> input;
+vector<int> v;
+bool check()
+{
+	for (int i = 0; i < v.size() - 1; i++) {
+		if (v[i] > v[i + 1]) return false;
+	}
+	return true;
+}
+
+void solve(int cnt)
+{
+	if (cnt == m)
+	{
+		if (check()) {
+			for (int i = 0; i < v.size(); i++) {
+				cout << v[i] << " ";
+			}
+			cout << "\n";
+		}
+		return;
+	}
+	int c[10002] = { 0, };//하나기준으로 끝날때마다 초기화
+
+	for (int i = 0; i < n; i++)
+	{
+		if (!c[input[i]]) {
+			c[input[i]] = true;
+			v.push_back(input[i]);
+			solve(cnt + 1);
+			v.pop_back();
+		}
+	}
+}
+int main()
+{
+	cin >> n >> m;
+	for (int i = 0; i < n; i++) {
+		int tmp;
+		cin >> tmp;
+		input.push_back(tmp);
+	}
+	sort(input.begin(), input.end());
+	solve(0);
+}
