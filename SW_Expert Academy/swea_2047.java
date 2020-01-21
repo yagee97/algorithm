@@ -1,4 +1,4 @@
-//2047.½Å¹® Çìµå¶óÀÎ
+//2047.ì‹ ë¬¸ í—¤ë“œë¼ì¸
 package Swea;
 
 import java.util.Scanner;

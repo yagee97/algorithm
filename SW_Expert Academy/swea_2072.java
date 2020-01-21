@@ -1,3 +1,4 @@
+//2072. 홀수만 더하기
 package Swea;
 
 import java.util.Scanner;

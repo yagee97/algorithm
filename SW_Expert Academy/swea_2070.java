@@ -1,4 +1,4 @@
-//2070.Å« ³ğ, ÀÛÀº ³ğ, °°Àº ³ğ
+//2070. í°ë†ˆ, ì‘ì€ë†ˆ,ê°™ì€ë†ˆ
 package Swea;
 
 import java.util.Scanner;

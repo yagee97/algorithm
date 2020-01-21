@@ -1,4 +1,4 @@
-//2071. Æò±Õ°ª ±¸ÇÏ±â
+//2071. í‰ê· ê°’ êµ¬í•˜ê¸°
 package Swea;
 
 import java.util.Scanner;

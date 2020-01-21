@@ -1,4 +1,4 @@
-//2050.¾ËÆÄºªÀ» ¼ıÀÚ·Î º¯È¯
+//2050. ì•ŒíŒŒë²³ì„ ìˆ«ìë¡œ ë³€í™˜
 package Swea;
 
 import java.util.Scanner;
@@ -9,7 +9,7 @@ public class swea_2050 {
 		String input = sc.next();
 		
 		for(int i =0;i<input.length();i++) {
-			//string[i]Ã³·³ Á¢±ÙÇÏ¸é ¾ÈµÇ°í, charAt(i)·Î Á¢±Ù
+			//string[i]ì— ë°”ë¡œ ì ‘ê·¼ ë¶ˆê°€, charAt(i)ìœ¼ë¡œ ì ‘ê·¼í•´ì•¼í•¨.			
 			int num = (int)input.charAt(i);
 			System.out.print(num-64+" ");
 		}
